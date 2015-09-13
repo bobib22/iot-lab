@@ -32,6 +32,10 @@ setup-riot: parts/RIOT
 parts/RIOT:
 	git clone $(GITHUB_URL)RIOT-OS/RIOT.git $@
 
+setup-contiki-dinas-iotlab: parts/contiki-dinas-iotlab
+parts/contiki-dinas-iotlab:
+	git clone -b dinas-iotlab --single-branch $(GITHUB_URL)bobib22/contiki $@
+
 
 # IoT-Lab repositories
 $(addprefix setup-, $(IOTLAB_REPOS)): setup-%: parts/%
