@@ -10,7 +10,10 @@ To perform the initial setup of your development environment, run ``make``.
 
 # dinas on iotlab
 
-To launch a first contiki experiment on m3 nodes : 
+If you are new to iotlab, maybe it would be interesting for you to discover the iotlab environment through the web portal first : [submit-an-experiment-with-web-portal-and-m3-nodes](https://www.iot-lab.info/tutorials/submit-an-experiment-with-web-portal-and-m3-nodes/)
+Then after you will be more likely to understand the scripts used below that automates the reservation of nodes, the flashing, the communication via the serial link ... through the [iotlab command-line tools](https://github.com/iot-lab/iot-lab/wiki/CLI-Tools). For more tutorials : https://www.iot-lab.info/tutorials/
+
+To launch a first dinas experiment on m3 nodes : 
 
 * create an account on https://www.iot-lab.info/ and copy your ssh key in your profile
 * ``ssh <login>@lille.iot-lab.info:~`` (grid topology : https://www.iot-lab.info/deployment/lille/)
