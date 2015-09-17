@@ -2,7 +2,7 @@
 
 IOTLAB_REPOS = iot-lab.wiki contiki wsn430 openlab cli-tools aggregation-tools
 IOTLAB_REPOS += contiki-upstream-unstable
-EXTERN_REPOS = riot
+EXTERN_REPOS = riot contiki-dinas-iotlab
 REPOS = $(IOTLAB_REPOS) $(EXTERN_REPOS)
 
 SETUP_REPOS = $(sort $(addprefix setup-, $(REPOS)))
@@ -32,10 +32,14 @@ setup-riot: parts/RIOT
 parts/RIOT:
 	git clone $(GITHUB_URL)RIOT-OS/RIOT.git $@
 
+# git clone -b dinas-iotlab --single-branch $(GITHUB_URL)bobib22/contiki $@ 
+# --single-branch not supported since git (--version) = 1.7.2 on iotlab sept2015
 setup-contiki-dinas-iotlab: parts/contiki-dinas-iotlab
 parts/contiki-dinas-iotlab:
-	git clone -b dinas-iotlab --single-branch $(GITHUB_URL)bobib22/contiki $@
-
+	git clone $(GITHUB_URL)bobib22/contiki $@ 
+	cd $@;\
+	git branch --track dinas-iotlab origin/dinas-iotlab;\
+	git checkout dinas-iotlab
 
 # IoT-Lab repositories
 $(addprefix setup-, $(IOTLAB_REPOS)): setup-%: parts/%
