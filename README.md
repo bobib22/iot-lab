@@ -14,14 +14,11 @@ To launch a first contiki experiment on m3 nodes :
 
 * create an account on https://www.iot-lab.info/ and copy your ssh key in your profile
 * ``ssh <login>@lille.iot-lab.info:~`` (grid topology : https://www.iot-lab.info/deployment/lille/)
-<!-- * ``git clone -b dinas-iotlab --single-branch https://github.com/bobib22/iot-lab dinas-iotlab`` -->
 * clone the branch *dinas-iotlab* from https://github.com/bobib22/iot-lab
-
-	git clone https://github.com/bobib22/iot-lab dinas-iotlab 
-	cd dinas-iotlab
-	git branch --track dinas-iotlab origin/dinas-iotlab
-	git checkout dinas-iotlab
-	
+	* ``git clone https://github.com/bobib22/iot-lab dinas-iotlab``
+	* ``cd dinas-iotlab``
+	* ``git branch --track dinas-iotlab origin/dinas-iotlab``
+	* ``git checkout dinas-iotlab``
 * ``make setup-openlab setup-contiki-dinas-iotlab``
 * ``cd parts/contiki-dinas-iotlab/examples/ipv6/rpl-dinas/demo-dinas``
 * edit project-conf.h if you want to [change the transmission power or the rssi threshold](https://github.com/iot-lab/iot-lab/wiki/Limit-nodes-connectivity) to force the topology
