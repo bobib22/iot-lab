@@ -36,10 +36,7 @@ parts/RIOT:
 
 setup-contiki-dinas-iotlab: parts/contiki-dinas-iotlab
 parts/contiki-dinas-iotlab:
-   git clone $(GITHUB_URL)bobib22/contiki-dinas-iotlab $@ 
-   cd $@;\
-
-
+	git clone $(GITHUB_URL)bobib22/contiki-dinas-iotlab $@
 
 
 # IoT-Lab repositories
