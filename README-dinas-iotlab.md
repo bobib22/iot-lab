@@ -9,13 +9,14 @@ To launch a first dinas experiment on m3 nodes :
 * create an account on https://www.iot-lab.info/ and copy your ssh key in your profile
 * ``ssh <login>@lille.iot-lab.info:~`` (grid topology : https://www.iot-lab.info/deployment/lille/)
 * ``git clone https://github.com/bobib22/iot-lab-dinas``
+* ``cd iot-lab-dinas``
 * ``make setup-openlab setup-contiki-dinas-iotlab``
 * ``cd parts/contiki-dinas-iotlab/examples/ipv6/rpl-dinas/demo-dinas``
 * edit project-conf.h if you want to [change the transmission power or the rssi threshold](https://github.com/iot-lab/iot-lab/wiki/Limit-nodes-connectivity) to force the topology
 * ``make`` (dinas-peer.iotlab-m3 and dinas-sink.iotlab-m3 are iotlab-compliant binaries)
 * ``cd ../iotlab-scripts`` (script to launch an experiment on iotlab)
   * ``auth-cli -u <login> -p <password>`` (to authorize the launch of experiments through the command-line)
-  * ``./launch.sh`` (submit the experiment, flash the nodes and collect the logs from the serial output of each node in separate files (``output/<id>``))
+  * ``./launch.sh config/strasbourg-BR36-69dBm-20nodes.cfg <TIME(in min)>`` (submit the experiment, flash the nodes and collect the logs from the serial output of each node in a separate file (``output/<log>``))
 
 If you prefer to compile code on your computer : 
 
